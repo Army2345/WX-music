@@ -1,0 +1,40 @@
+{
+  "pages": [ 
+    "pages/login/login",
+    "pages/my/my",
+    "pages/index/index",
+    "pages/singerDetail/singerDetail",
+    "pages/play/play",
+    "pages/likesong/likesong",
+    "pages/recentmenu/recentmenu",
+    "pages/register/register",
+    "pages/forgetpwd/forgetpwd"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF99FF",
+    "navigationBarTitleText": "QQ音乐",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#444444",
+    "selectedColor": "#FF99FF",
+    "backgroundColor": "#eeee",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/音乐.png",
+        "selectedIconPath": "images/音乐1.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "images/我的.png",
+        "selectedIconPath": "images/我的1.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

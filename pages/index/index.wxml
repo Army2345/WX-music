@@ -1,0 +1,36 @@
+<!-- 轮播图 -->
+<view class="page-section page-section-spacing swiper">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="rgb(255,255,255,0.3)">
+    <block wx:for="{{background}}" wx:key="this">
+      <swiper-item>
+        <image mode="widthFix" src="{{item.imageUrl}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 热门歌手 -->
+<view class="hotsinger">热门歌手</view>
+<view class="singer">
+  <block wx:for="{{singers}}" wx:key="this" wx:for-index="in">
+    <view class="singer-item" data-index="{{in}}" bindtap="hotlink">
+      <image src="{{item.picUrl}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </block>
+</view>
+
+<!-- 最新音乐 -->
+<view class="newmusic">最新音乐</view>
+<view class="new">
+  <block wx:for="{{newmusic}}" wx:key="this" wx:for-index="in">
+    <view class="new-item"  data-index="{{in}}" bindtap="playlink">
+      <view class="left" >
+        <text>{{item.name}}</text>
+        <text>{{item.song.artists[0].name}}</text> 
+      </view>
+     <image src="../../images/pause1.png"></image>
+    </view>
+  </block>
+
+
+</view>

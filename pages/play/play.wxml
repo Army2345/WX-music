@@ -1,0 +1,37 @@
+<image src="{{music.picUrl}}" class="background-image"></image>
+<image src="{{music.al.picUrl}}" class="background-image"></image>
+<view class="title">{{music.name}}</view>
+<!-- 轮播插件 -->
+<view class="middle">
+  <swiper>
+    <swiper-item class="item round">
+      <image src="{{music.picUrl}}" style="animation-play-state:{{action.method==='play'?'play':'paused'}} "></image>
+      <image src="{{music.al.picUrl}}" style="animation-play-state:{{action.method==='play'?'play':'paused'}} "></image>
+    </swiper-item>
+    <swiper-item class="item content">
+    <!-- scroll-top="{{top}}"设置竖向滚动条的位置 -->
+      <scroll-view scroll-y='false' class="songcontent" 	scroll-top='{{top}}'>
+      <!-- wx:for-index="in"  当前遍历时候的下标，如果等于当前播放歌词的下标就给歌词更改样式，否则不变 -->
+        <view wx:for-index='in' wx:for="{{songwords}}" class="{{in===index?'color':''}}">{{item[1]}}</view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 循环播放 -->
+<image src="../../images/{{mode==='single'?'loop':'single'}}.png" class="circle" bindtap="playcircle"></image>
+<!-- 底部 -->
+<view class="footer">
+  <!-- 进度条  组件--表单组件--slider -->
+  <view class="time">
+    <view class="left">{{currenttime}}</view>
+    <slider bindchange="sliderchange" step="5" block-size="10px" activeColor="plum" style="width:{{currentWidth+'px'}}" max="{{max}}" value="{{value}}"/>
+    <view class="right">{{timeall}}</view>
+  </view>
+  <view class="icon">
+    <image src="../../images/上一首.png" bindtap="lastsong"></image>
+    <image src="../../images/{{action.method==='play'?'pause':'play'}}.png" bindtap="playdate"></image>
+    <image src="../../images/下一首.png" bindtap="nextsong"></image>
+  </view>
+</view>
+<!--bindtimeupdate 播放时间更新时触发  -->
+<audio src=" https://music.163.com/song/media/outer/url?id={{musicId}}.mp3 " action="{{action}}" bindtimeupdate="wordschange" bindended="musicchange"></audio>

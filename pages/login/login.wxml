@@ -1,0 +1,9 @@
+<view class="welcome">欢迎回来！</view>
+<input type="text" 	placeholder="请输入手机号码"data-type="phone" bindinput="handInput"/>
+<input type="password" 	placeholder="请输入密码"  data-type="password" bindinput="handInput"/>
+<view class="loading" bindtap="login">登录</view>
+<view class="pwd" bindtap="forgetpwd">忘记密码</view>
+<view class="footer">
+  <text>还没有账号？</text>
+  <text bindtap="register">马上注册</text>
+</view>

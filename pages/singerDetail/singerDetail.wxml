@@ -1,0 +1,29 @@
+<!-- 歌手图片区域-->
+<view class="imgs">
+  <image src="{{singerdata.data.picUrl}}"></image>
+  <view class="text">
+    <view>{{singerdata.data.name}}</view>
+    <view>粉丝数：{{singerdata.data.fansCount}}</view>
+  </view>
+</view>
+
+<!-- 歌手简介 -->
+<view class="singer">
+  <view class="font">歌手简介</view>
+  <view class="produce">{{singerDetails.data.briefDesc}}</view>
+</view>
+
+<!-- 热门单曲 -->
+<view class="hotfont">热门单曲</view>
+<view class="hotsong">
+  <block wx:for="{{hotsingersong}}" wx:key="this" wx:for-index="in">
+    <view class="hot-item" bindtap="playlink" data-index="{{in}}">
+      <view class="index">{{index+1}}</view>
+      <view class="song-text">
+        <text>{{item.name}}</text>
+        <text>{{item.al.name}}</text>
+      </view>
+      <image src="../../images/暂停 (1).png"></image>
+    </view>
+  </block>
+</view>

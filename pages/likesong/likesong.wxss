@@ -1,0 +1,52 @@
+page{
+  background-color: rgb(238, 202, 238);
+}
+.top{
+  font-size: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.likesong{
+  width: 100%;
+  /* margin-top: 20px; */
+  /* background-color: pink; */
+}
+.likesong .likesong-item{
+  margin: 10px 10px;
+  width: 90%;
+  height: 60px;
+  display: flex;
+  border-bottom: 1px solid rgb(209, 205, 205);
+ 
+}
+.likesong-item .left{
+  width:300px;
+  height: 50px;
+display: flex;
+line-height: 50px;
+  /* background-color: pink; */
+}
+.likesong-item .left text{
+  display: inline-block;
+/* background-color: pink; */
+  color: rgb(180, 175, 175);
+   margin-left: 10px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   font-size: 12px;
+   
+}
+.likesong-item .left image{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+
+}
+.likesong-item image{
+  width: 40px;
+  height: 40px;
+  margin-top: 7px;
+}
+

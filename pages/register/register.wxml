@@ -1,0 +1,9 @@
+<view class="welcome">注册</view>
+<view class="msg">
+  <input type="number" placeholder="请输入手机号码" data-type="phone" bindinput="handInput" class="phone" />
+ <text class="confirm" bindtap="confirm">发送验证码</text>
+</view>
+<input type="number" placeholder="请输入验证码" bindinput="handInput" data-type="confirm" />
+<input type="password" placeholder="请输入密码" data-type="password" bindinput="handInput" />
+<input type="text" placeholder="请输入昵称" bindinput="handInput" data-type="nickname"/>
+<view class="loading" bindtap="login">注册</view>

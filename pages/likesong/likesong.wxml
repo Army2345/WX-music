@@ -1,0 +1,12 @@
+<view class="top">我喜欢的音乐</view>
+<view class="likesong">
+  <block>
+    <view class="likesong-item" wx:for="{{likesong}}" wx:key="this" wx:for-index="in">
+      <view class="left" bindtap="playlink" data-index="{{in}}">
+        <image src="{{item.al.picUrl}}"></image>
+        <text>{{item.al.name}}</text>
+      </view>
+      <image src="../../images/暂停 (1).png" id="btn"></image>
+    </view>
+  </block>
+</view>

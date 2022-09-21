@@ -1,0 +1,43 @@
+<view class="bc-image">
+  <image class="bg" src="../../images/bg.jpg"></image>
+</view>
+<view class="up">
+  <!-- 搜索框 -->
+  <view class="search">
+    <input type="text" bindinput="input" />
+    <image src="../../images/搜索.png"></image>
+  </view>
+  <block wx:if="{{words.length}}">
+    <view class="white" wx:for="{{words}}" wx:key="this" wx:for-index="in">
+      <view bindtap="playlink" data-index="{{in}}">{{text==null?null:item.name}}</view>
+    </view>
+  </block>
+  <!-- 头像 -->
+  <block wx:else>
+    <view class="header">
+      <image src="{{userInfo.avatarUrl?userInfo.avatarUrl:'../../images/我的1.png'}}" bindtap="user"></image>
+      <text>{{userInfo.nickname?userInfo.nickname:'用户昵称'}}</text>
+    </view>
+    <!-- 我的歌单 -->
+    <view class="mylike">我的歌单</view>
+    <view class="likemenu">
+      <block wx:for="{{likemenu}}" wx:key="this" wx:for-index="in">
+        <view class="likemenu-item" bindtap="likesong" data-index="{{in}}">
+          <image src="{{item.coverImgUrl}}"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+    <!-- 最近播放 -->
+    <view class="recent">最近播放</view>
+    <view class="recentlist">
+      <block wx:for="{{recentlist}}" wx:key="this" wx:for-index="in">
+        <view class="recentlist-item">
+          <image src="{{item.song.al.picUrl}}" bindtap="recentcontent" data-index="{{in}}"></image>
+          <text>{{item.song.al.name}}</text>
+        </view>
+      </block>
+    </view>
+  </block>
+
+</view>

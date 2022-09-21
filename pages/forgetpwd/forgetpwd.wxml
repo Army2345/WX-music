@@ -1,0 +1,8 @@
+<view class="welcome">忘记密码</view>
+<view class="msg">
+  <input type="number" placeholder="请输入手机号码" data-type="phone" bindinput="handInput" class="phone" />
+ <text class="confirm" bindtap="confirm">发送验证码</text>
+</view>
+<input type="number" placeholder="请输入验证码" bindinput="handInput" data-type="confirm" />
+<input type="password" placeholder="请重新输入密码" data-type="password" bindinput="handInput" />
+<view class="loading" bindtap="login">登录</view>
